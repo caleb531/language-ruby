@@ -1359,6 +1359,28 @@
     'name': 'comment.block.documentation.ruby'
   }
   {
+    'begin': '(^[ \\t]+)?(?=## )'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.whitespace.comment.leading.ruby'
+    'end': '(?!\\G)'
+    'patterns': [
+      {
+        'begin': '##'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.ruby'
+        'end': '\\n'
+        'name': 'comment.line.number-sign.ruby'
+        'patterns': [
+          {
+            'include': 'text.html.basic'
+          }
+        ]
+      }
+    ]
+  }
+  {
     'begin': '(^[ \\t]+)?(?=#)'
     'beginCaptures':
       '1':
